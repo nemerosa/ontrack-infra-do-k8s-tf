@@ -1,0 +1,14 @@
+# IDE
+.idea
+*.iml
+*.http
+
+# Terraform
+.terraform
+backend.hcl
+*.tfvars
+plan
+*.tfstate*
+
+# Misc.
+/bug
