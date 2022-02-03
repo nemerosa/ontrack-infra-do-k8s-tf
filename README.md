@@ -26,7 +26,7 @@ terraform plan -input=false -out=plan
 Apply the plan:
 
 ```bash
-terraform apply -plan plan
+terraform apply plan
 ```
 
 After a few minutes, Ontrack will have been deployed in your Digital Ocean cluster and a managed Postgres database has been created.
