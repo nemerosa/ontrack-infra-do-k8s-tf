@@ -92,7 +92,10 @@ locals {
   db_url = "jdbc:postgresql://${digitalocean_database_cluster.db.private_host}:${digitalocean_database_cluster.db.port}/${digitalocean_database_db.db-ontrack.name}?sslmode=require"
 
   helm_values = templatefile( "${path.module}/values.yaml", {
-    host = "${var.name}.${var.do_domain}",
+    host                      = "${var.name}.${var.do_ingress_domain}",
+    do_ingress_enabled        = var.do_ingress_enabled,
+    do_ingress_class          = var.do_ingress_class,
+    do_ingress_cluster_issuer = var.do_ingress_cluster_issuer,
   } )
 }
 
@@ -166,7 +169,7 @@ data "digitalocean_loadbalancer" "cluster_lb" {
 
 resource "digitalocean_record" "cluster_lb_record" {
   count  = var.do_ingress_enabled ? 1 : 0
-  domain = var.do_domain
+  domain = var.do_ingress_domain
   type   = "A"
   name   = var.name
   value  = data.digitalocean_loadbalancer.cluster_lb[0].ip

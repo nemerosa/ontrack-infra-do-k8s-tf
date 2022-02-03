@@ -48,14 +48,28 @@ variable "do_database_count" {
   description = "Number of nodes in the Digital Ocean Postgres cluster"
 }
 
+# Ingress configuration
+
 variable "do_ingress_enabled" {
   type        = bool
   default     = false
   description = "Set to true to enable ingress"
 }
 
-variable "do_domain" {
+variable "do_ingress_domain" {
   type        = string
   description = "Managed domain in Digital Ocean. Required if ingress is enabled."
   default     = "example.com"
+}
+
+variable "do_ingress_class" {
+  type        = string
+  description = "Value for the kubernetes.io/ingress.class annotation in the ingress resource"
+  default     = "nginx"
+}
+
+variable "do_ingress_cluster_issuer" {
+  type        = string
+  description = "Value for the cert-manager.io/cluster-issuer annotation in the ingress resource"
+  default     = "letsencrypt-prod"
 }
