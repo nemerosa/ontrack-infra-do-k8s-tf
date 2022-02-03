@@ -16,17 +16,18 @@ variable "do_k8s_cluster" {
   description = "Name of the DO K8S Cluster where to deploy the application"
 }
 
-variable "ontrack_version" {
-  type        = string
-  description = "Version of Ontrack to install"
-}
-
 # Optional variables
 
 variable "prefix" {
   type        = string
   description = "Prefix to add to the name when creating resources (database, etc.)"
   default     = "ontrack-"
+}
+
+variable "ontrack_version" {
+  type        = string
+  description = "Version of Ontrack to install"
+  default     = "4.1"
 }
 
 variable "ontrack_chart_version" {
