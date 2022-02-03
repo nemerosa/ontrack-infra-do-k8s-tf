@@ -169,5 +169,5 @@ resource "digitalocean_record" "cluster_lb_record" {
   domain = var.do_domain
   type   = "A"
   name   = var.name
-  value  = data.digitalocean_loadbalancer.cluster_lb.ip
+  value  = data.digitalocean_loadbalancer.cluster_lb[0].ip
 }
