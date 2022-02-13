@@ -97,7 +97,9 @@ locals {
     do_ingress_class          = var.do_ingress_class,
     do_ingress_cluster_issuer = var.do_ingress_cluster_issuer,
     nodeSelector              = yamlencode(var.chart_nodeSelector),
-    tolerations               = yamlencode(var.chart_tolerations),
+    tolerations               = yamlencode({
+      tolerations : var.chart_tolerations,
+    }),
   } )
 }
 

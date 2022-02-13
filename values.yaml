@@ -13,5 +13,4 @@ ingress:
         - ${host}
 nodeSelector:
   ${nodeSelector}
-tolerations:
-  ${tolerations}
+${tolerations}
