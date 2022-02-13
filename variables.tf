@@ -56,6 +56,17 @@ variable "chart_nodeSelector" {
   default     = {}
 }
 
+variable "chart_tolerations" {
+  type = list(object({
+    key      = string
+    operator = string
+    value    = string
+    effect   = string
+  }))
+  description = "Pod tolerations to use"
+  default     = []
+}
+
 # Ingress configuration
 
 variable "do_ingress_enabled" {
