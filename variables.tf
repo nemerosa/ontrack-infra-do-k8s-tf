@@ -48,6 +48,14 @@ variable "do_database_count" {
   description = "Number of nodes in the Digital Ocean Postgres cluster"
 }
 
+# Chart values
+
+variable "chart_nodeSelector" {
+  type        = map(string)
+  description = "Node selectors to use"
+  default     = {}
+}
+
 # Ingress configuration
 
 variable "do_ingress_enabled" {

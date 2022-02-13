@@ -11,3 +11,5 @@ ingress:
     - secretName: ${host}-tls
       hosts:
         - ${host}
+nodeSelector:
+  ${nodeSelector}

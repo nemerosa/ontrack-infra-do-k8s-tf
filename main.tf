@@ -5,7 +5,7 @@ terraform {
       source  = "digitalocean/digitalocean"
       version = "~> 2.17.1"
     }
-    helm         = {
+    helm = {
       version = "~> 2.4.1"
     }
   }
@@ -96,6 +96,7 @@ locals {
     do_ingress_enabled        = var.do_ingress_enabled,
     do_ingress_class          = var.do_ingress_class,
     do_ingress_cluster_issuer = var.do_ingress_cluster_issuer,
+    nodeSelector              = yamlencode(var.chart_nodeSelector),
   } )
 }
 
