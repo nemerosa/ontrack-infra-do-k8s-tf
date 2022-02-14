@@ -33,7 +33,7 @@ variable "ontrack_version" {
 variable "ontrack_chart_version" {
   type        = string
   description = "Chart version"
-  default     = "0.1.10"
+  default     = "0.1.11"
 }
 
 variable "do_database_size" {

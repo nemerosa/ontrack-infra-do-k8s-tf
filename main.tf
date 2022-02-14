@@ -137,6 +137,13 @@ resource "helm_release" "ontrack" {
     value = var.ontrack_version
   }
 
+  # Metrics tags
+
+  set {
+    name  = "ontrack.management.metrics.tags.instance"
+    value = local.do_prefix
+  }
+
   # Using the managed database
 
   set {
