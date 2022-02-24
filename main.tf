@@ -146,7 +146,7 @@ resource "helm_release" "ontrack" {
   }
 
   set {
-    name  = "ontrack.management.metrics.tags.instance"
+    name  = "ontrack.management.metrics.tags.application_instance"
     value = local.do_prefix
   }
 
