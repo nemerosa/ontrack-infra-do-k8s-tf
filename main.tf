@@ -93,6 +93,7 @@ locals {
 
   helm_values = templatefile( "${path.module}/values.yaml", {
     host                      = "${var.name}.${var.do_ingress_domain}",
+    ontrack_profiles          = var.ontrack_profiles,
     do_ingress_enabled        = var.do_ingress_enabled,
     do_ingress_class          = var.do_ingress_class,
     do_ingress_cluster_issuer = var.do_ingress_cluster_issuer,

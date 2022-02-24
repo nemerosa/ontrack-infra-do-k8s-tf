@@ -1,3 +1,5 @@
+ontrack:
+  profiles: "${ontrack_profiles}"
 ingress:
   enabled: ${do_ingress_enabled}
   annotations:

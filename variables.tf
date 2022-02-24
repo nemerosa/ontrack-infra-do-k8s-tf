@@ -33,7 +33,13 @@ variable "ontrack_version" {
 variable "ontrack_chart_version" {
   type        = string
   description = "Chart version"
-  default     = "0.1.11"
+  default     = "0.1.12"
+}
+
+variable "ontrack_profiles" {
+  type        = string
+  description = "Comma separated list of profiles"
+  default     = "prod"
 }
 
 variable "do_database_size" {
