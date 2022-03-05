@@ -172,6 +172,18 @@ resource "helm_release" "ontrack" {
     value = local.db_url
   }
 
+  # Persistence data
+
+  set {
+    name  = "ontrack.persistence.enabled"
+    value = "true"
+  }
+
+  set {
+    name  = "ontrack.persistence.size"
+    value = var.ontrack_persistence_size
+  }
+
 }
 
 // =======================================================================================

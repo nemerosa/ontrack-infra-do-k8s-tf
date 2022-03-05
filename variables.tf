@@ -33,7 +33,13 @@ variable "ontrack_version" {
 variable "ontrack_chart_version" {
   type        = string
   description = "Chart version"
-  default     = "0.1.12"
+  default     = "0.1.16"
+}
+
+variable "ontrack_persistence_size" {
+  type        = string
+  description = "Initial disk size for the Ontrack working data."
+  default     = "5Gi"
 }
 
 variable "ontrack_profiles" {
